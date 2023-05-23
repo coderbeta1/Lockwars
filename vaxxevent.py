@@ -18,9 +18,9 @@ def choosevax(prog):
     for i in range(3):
         r[i]=rn.randint(low,low+(3-i//2))*5
         low=r[i]/5
-    arg=numpy.argsort(esttime)
+    arg=numpy.argsort(cost)
     for i in range(3):
-        risk[i]=r[arg[i]]
+        risk[arg[i]]=r[i]
     return [int(x*h(x)/avgstock) for x in cost],esttime,risk,[h(x)/avgstock for x in cost] #costperday,esttimeleftfor1stock,currentphase,riskfordiffmethods,progressperdayperstock
     #for progressperday, take progressperdayperstock*no.of stocks
 
