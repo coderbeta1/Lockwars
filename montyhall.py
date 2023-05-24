@@ -5,19 +5,31 @@ testtubes=random.choice([['A','B','C','D','E'],['A','B','C','D','E','F'],['A','B
 print(testtubes)
 print('One of these test tubes contains the functional vaccine and the rest are fatal.\n\nPick a test tube so that we can test it in a lab: ')
 picked=input().upper()
+while True:
+    if picked not in testtubes:
+        print('Enter a test tube name.')
+        picked=input().upper()
+    else:
+        break
 num=len(testtubes)
 testtubes.remove(picked)
 extrattube=random.choice(testtubes)
 testtubesnew=sorted([picked,extrattube])
 print('You chose',picked,' test tube. You decide to test it the next day and leave the lab.\n\nYou wake up the next day to find out that',num-2,'of the test tubes other than the one you chose were stolen and consumed by some lab assistants. All of them had died.\nThe remaining test tubes are these: ')
 print(testtubesnew)
-print('You realize that to research the cure you need to pick one of the remaining two test tubes as the facility will be closed down to investigate the deaths.\nDo you stick with your previous choice or do you switch over to the other one?\n')
+print('You realize that to research the cure you need to pick one of the remaining two test tubes as the facility will be closed down to investigate the deaths.\nDo you stick with your previous choice or do you switch over to the other one?\n(Enter test tube name)\n')
 answer=input().upper()
+while True:
+    if answer not in testtubesnew:
+        print('Enter a test tube name.')
+        answer=input().upper()
+    else:
+        break
 if answer==picked:
     if random.random()>=0.90:
-        print('Phew, you picked the test tube with the vaccine, even though the odds were against you. Switching would have given you a higher probability of picking the right one.')
+        print('Phew, you picked the test tube with the vaccine, even though the odds were against you. Switching would have given you a higher probability of picking the vaccine.')
     else:
-        print('You chose the wrong test tube, now the research is delayed by a few months. Switching would have given you a higher probability of picking the right one.')
+        print('You chose the wrong test tube, now the research is delayed by a few months. Switching would have given you a higher probability of picking the vaccine.')
 
 else:
     if random.random()>=0.90:
