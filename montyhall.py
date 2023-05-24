@@ -24,3 +24,17 @@ else:
         print('Although you made the right decision to switch, you still picked the wrong test tube and the research is delayed by a few months.')
     else:
         print('Nice work! You made the right decision to switch and picked the test tube with the vaccine!')
+
+'''
+Assume 5 test tubes :
+
+    You pick one - there is a 1/5 chance it is the vaccine.
+    After three are revealed to be fatal, the probability changes.
+    Let V be event of the ttube you picked being the vaccine.
+    Let D be event of the three ttubes being fatal.
+    P(V/D) = P(D/V)*P(V)/(P(D/V)*P(V)+P(D/Vc)*P(Vc)) according to bayes theorem.
+           = (3/4)*(1/5)/((3/4)*(1/5)+(2/4)*(4/5)) = 3/11
+    P(Vc/D) = 1-3/11 = 8/11
+    
+Hence prob of the ttube you picked is 3/11 while prob that the vaccine is the other ttube is 8/11.
+'''
