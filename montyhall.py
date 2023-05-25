@@ -7,15 +7,28 @@ import colorama
 from colorama import Fore, Back, Style
 colorama.init(autoreset=True)
 
-def write(write):
+def writeY(write):
     for i in write:
         print(Fore.YELLOW+i,end="")
         # sys.stdout.write(i)
         sys.stdout.flush()
         time.sleep(.02)
     print()
+def writeR(write):
+    for i in write:
+        print(Fore.RED+i,end="")
+        # sys.stdout.write(i)
+        sys.stdout.flush()
+        time.sleep(.02)
+    print()
+def writeG(write):
+    for i in write:
+        print(Fore.GREEN+i,end="")
+        # sys.stdout.write(i)
+        sys.stdout.flush()
+        time.sleep(.02)
+    print()
 front.event_start()
-
 for i in range(50):
     print()
 testtubes=random.choice([['A','B','C','D','E'],['A','B','C','D','E','F'],['A','B','C','D','E','F','G'],['A','B','C','D','E','F','G','H'],['A','B','C','D','E','F','G','H','I']])
@@ -153,7 +166,7 @@ print(Fore.YELLOW+Style.BRIGHT+'''
 ============================================================================================================================================================
 ''')
 time.sleep(3)
-write('One of these test tubes contains the functional vaccine and the rest are fatal.')
+writeY('One of these test tubes contains the functional vaccine and the rest are fatal.')
 print(Fore.MAGENTA+Style.BRIGHT+'''
                  _________
                 [_________]
@@ -164,11 +177,11 @@ print(Fore.MAGENTA+Style.BRIGHT+'''
                  |POISON!|
                  `"""""""`
                                                                              ''')
-write('Pick a test tube so that we can test it in a lab: ')
+writeY('Pick a test tube so that we can test it in a lab: ')
 picked=input().upper()
 while True:
     if picked not in testtubes:
-        write('Enter a test tube name.')
+        writeY('Enter a test tube name.')
         picked=input().upper()
     else:
         break
@@ -176,13 +189,13 @@ num=len(testtubes)
 testtubes.remove(picked)
 extrattube=random.choice(testtubes)
 testtubesnew=sorted([picked,extrattube])
-write('You chose '+picked+' test tube. You decide to test it the next day and leave the lab.\n\nYou wake up the next day to find out that '+str(num-2)+' of the test tubes other than the one you chose were stolen and consumed by some lab assistants. All of them had died.\nThe remaining test tubes are these: ')
+writeY('You chose '+picked+' test tube. You decide to test it the next day and leave the lab.\n\nYou wake up the next day to find out that '+str(num-2)+' of the test tubes other than the one you chose were stolen and consumed by some lab assistants. All of them had died.\nThe remaining test tubes are these: ')
 print(testtubesnew)
-write('You realize that to research the cure you need to pick one of the remaining two test tubes as the facility will be closed down to investigate the deaths.\nDo you stick with your previous choice or do you switch over to the other one?\n(Enter test tube name)\n')
+writeY('You realize that to research the cure you need to pick one of the remaining two test tubes as the facility will be closed down to investigate the deaths.\nDo you stick with your previous choice or do you switch over to the other one?\n(Enter test tube name)\n')
 answer=input().upper()
 while True:
     if answer not in testtubesnew:
-        print('Enter a test tube name.')
+        writeY('Enter a test tube name.')
         answer=input().upper()
     else:
         break
@@ -217,7 +230,7 @@ if answer==picked:
                                                  ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝╚═╝
 ============================================================================================================================================================ 
             ''')
-        write('Phew, you picked the test tube with the vaccine, even though the odds were against you. Switching would have given you a higher probability of picking the vaccine.')
+        writeG('Phew, you picked the test tube with the vaccine, even though the odds were against you. Switching would have given you a higher probability of picking the vaccine.')
     else:
         for i in range(20):
             print()
@@ -245,7 +258,7 @@ if answer==picked:
                                                ╚═╝    ╚═════╝  ╚═════╝     ╚══════╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═╝╚═╝
 ============================================================================================================================================================
             ''')
-        write('You chose the wrong test tube, now the research is delayed by a few months. Switching would have given you a higher probability of picking the vaccine.')
+        writeR('You chose the wrong test tube, now the research is delayed by a few months. Switching would have given you a higher probability of picking the vaccine.')
 
 else:
     if random.random()>=0.90:
@@ -275,7 +288,7 @@ else:
                                                ╚═╝    ╚═════╝  ╚═════╝     ╚══════╝ ╚═════╝ ╚══════╝   ╚═╝   ╚═╝╚═╝
 ============================================================================================================================================================ 
             ''')
-        write('Although you made the right decision to switch, you still picked the wrong test tube and the research is delayed by a few months.')
+        writeR('Although you made the right decision to switch, you still picked the wrong test tube and the research is delayed by a few months.')
     else:
         for i in range(20):
             print()
@@ -305,7 +318,7 @@ else:
                                                  ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═══╝╚═╝╚═╝
 ============================================================================================================================================================ 
             ''')
-        write('Nice work! You made the right decision to switch and picked the test tube with the vaccine!')
+        writeG('Nice work! You made the right decision to switch and picked the test tube with the vaccine!')
 
 '''
 Assume 5 test tubes :
