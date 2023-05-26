@@ -7,6 +7,6 @@ def vaxupdate(state):
         if vaccine.rn.randint(1,101)<risk[i]:
             pass
         else:
-            state['vaxxprog']+=progpday[i]
-    state['eco']-=state['vaxxcost']
+            state['vaxx']['vaxxprog']+=progpday[i]
+    state['eco']-=state['vaxx']['vaxxcost']
     return state
