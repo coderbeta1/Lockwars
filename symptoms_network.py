@@ -154,7 +154,7 @@ def mutate_graphwise(symptom_list : list[symptom],  initial_symptoms : list[symp
 
     return initial_symptoms, initial_mortality_rate, initial_mortality_rate
 
-def doshit(n : int):
+def dosuff(n : int):
     data = initialize_symptoms()
     a = 0
     b = 0
@@ -169,8 +169,8 @@ def doshit(n : int):
         b = shit[2]
         print([x.name for x in symps])
     return
-#doshit(10)
-def doshitdifferently(n : int):
+
+def dostuffdifferently(n : int):
     data = initialize_symptoms()
     a = 0
     b = 0
