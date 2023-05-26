@@ -87,4 +87,6 @@ def main(c,a):
             return 0
         if me.alive and not (terrorista.alive and riota.alive):
             return 1
+        if i==2:
+            break
     return 0
