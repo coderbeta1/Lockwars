@@ -132,7 +132,7 @@ def main(c,a):
             ''')
         for i in range(5):
             print()
-        writeY("You made the wisest choice and won.")
+        writeG("You made the wisest choice and won.")
         return 1
     while me.alive:
         [d1[a].die() if atk(d[c]) else 0]
@@ -168,7 +168,7 @@ def main(c,a):
             ''')
             for i in range(5):
                 print()
-            writeY("You did not make the best choice and unfortunately lost.")
+            writeR("You did not make the best choice and unfortunately lost.")
             return 0
         if i==2 and me.alive and (terrorista.alive or riota.alive):
             for i in range(20):
@@ -199,7 +199,7 @@ def main(c,a):
             ''')
             for i in range(5):
                 print()
-            writeY("You did not make the best choice and unfortunately lost.")
+            writeR("You did not make the best choice and unfortunately lost.")
             return 0
         if me.alive and not (terrorista.alive and riota.alive):
             for i in range(20):
@@ -232,7 +232,7 @@ def main(c,a):
             ''')
             for i in range(5):
                 print()
-            writeY("You did not make the wisest choice but luckily won.")
+            writeG("You did not make the wisest choice but luckily won.")
             return 1
         if i==2:
             break
@@ -264,7 +264,7 @@ def main(c,a):
             ''')
     for i in range(5):
         print()
-    writeY("You did not make the best choice and unfortunately lost.")        
+    writeR("You did not make the best choice and unfortunately lost.")        
     return 0
 for i in range(45):
     print()
