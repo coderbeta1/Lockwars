@@ -36,7 +36,7 @@ print(Fore.YELLOW+Style.BRIGHT+'''
 ''')
 for i in range(2):
     print()
-state={}
+
 def bday(n,x):
     return 1-math.factorial(n)/(math.factorial(n-x)*n**x)
 def findanswer(n):
@@ -87,7 +87,7 @@ def event(state):
 ============================================================================================================================================================ 
             ''')
         writeG('Good Work! Thanks to your help the researchers were able to improve the vaccine')
-        state['vaxxeff']=int(rn.randint(85, 95)/100)
+        state['vaxx']['vaxxeff']=int(rn.randint(85, 95)/100)
     else:
         ans=findanswer(n)
         for i in range(20):
@@ -118,6 +118,6 @@ def event(state):
             ''')
         writeR(f"Nice Try! The optimal number of people is {ans}. You can find the answer by finding the probability that no two people\
  have the same variant and subtracting it from the total probability")
-        state['vaxxeff']=int(rn.randint(70, 85)/100)
+        state['vaxx']['vaxxeff']=int(rn.randint(70, 85)/100)
     return state
 event(state)        #remove when integraing
