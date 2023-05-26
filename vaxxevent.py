@@ -34,10 +34,10 @@ def choosevax(prog):
 def vaxevent(state,cost,risk,progpday,stock):
     
     cost=sum([cost[i]*stock[i] for i in range(3)])
-    state['vaxxspeed']=progpday
+    state['vaxx']['vaxxspeed']=progpday
     progpday=[progpday[i]*stock[i] for i in range(3)]
-    state['vaxxrisk']=risk
-    state['vaxxcost']=cost
+    state['vaxx']['vaxxrisk']=risk
+    state['vaxx']['vaxxcost']=cost
     print(progpday)
     print(cost)
     return state
@@ -89,8 +89,8 @@ def actualevent(state):
     t.sleep(3)
     for i in range(50):
         print()
-    cost,time,risk,progpday=choosevax(state['vaxxprog'])
-    ph=phase(state['vaxxprog'])
+    cost,time,risk,progpday=choosevax(state['vaxx']['vaxxprog'])
+    ph=phase(state['vaxx']['vaxxprog'])
     print(Fore.YELLOW+Style.BRIGHT+'''
     +----------------------------------------------------------------------------------------------------------------------------------------------------------+
     ''')
